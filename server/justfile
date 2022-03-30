@@ -1,0 +1,11 @@
+run:
+  go run ./cmd/main.go
+
+db-generate:
+  go run github.com/prisma/prisma-client-go generate
+
+db-reset:
+  go run github.com/prisma/prisma-client-go migrate reset
+
+db-migrate migration-name:
+  go run github.com/prisma/prisma-client-go migrate dev --name {{migration-name}}
